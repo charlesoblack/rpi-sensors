@@ -51,9 +51,9 @@ class TempHumiditySensor(object):
 
         # ack
         if not self.confirm(80, 0):
-            raise RuntimeError('DHT did not reply properly')
+            raise RuntimeError('DHT did not ack properly - low')
         if not self.confirm(80, 1):
-            raise RuntimeError('DHT did not reply properly')
+            raise RuntimeError('DHT did not ack properly - high')
 
         # data transmission begins
         # this is bit-by-bit
