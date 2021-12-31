@@ -23,7 +23,6 @@ class TempHumiditySensor(object):
         self.parse()
 
     def confirm(self, microseconds, level):
-
         for i in range(microseconds // 10 + 1):
             if gpio.input(self.pin) != level:
                 return False
